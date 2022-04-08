@@ -31,11 +31,14 @@ public class Score : MonoBehaviour
     public Text winText;
     private itemdata items;
     public bool boss;
+    ObjectSpawner objectSpawners;
 
     void Start()
     {
+        url = GlobalConstant.apiURL + "/level";
         itemScript = GameObject.Find("itemmanager").GetComponent<ItemManager>();
         hpScript = GameObject.Find("SpaceShip").GetComponent<PlayerHP>();
+        objectSpawners = GameObject.Find("AsteroidSpawner").GetComponent<ObjectSpawner>();
         score = 0;
         i = 0;
         if (scoreText)
@@ -84,12 +87,12 @@ public class Score : MonoBehaviour
     {
         if (i == 0 && winBool == true)
         {
+            objectSpawners.BGBossBar.SetActive(false);
             Instantiate(win, ship.transform.position, Quaternion.identity);
             StartCoroutine(winParticle());
             i = 2;
         } else {
             boss = true;
-            //Debug.Log(boss);
         }
 
     }
@@ -115,7 +118,8 @@ public class Score : MonoBehaviour
                 {
                     var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
                     var tempArray = JObject.Parse(www.downloadHandler.text);
-                    hpScript.maxHp = (int)tempArray["maxHp"];                  
+                    hpScript.maxHp = (int)tempArray["maxHp"];
+                    maxScore = (int)tempArray["maxScore"];
                 }
                 else
                 {

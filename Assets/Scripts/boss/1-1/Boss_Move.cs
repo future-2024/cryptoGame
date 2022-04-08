@@ -29,7 +29,7 @@ public class Boss_Move : MonoBehaviour
     private void Move()
     {
         if (script.gameOver == false) { 
-            Vector3 move = new Vector3(Random.Range(-2, 2), 0, 0);
+            Vector3 move = new Vector3(Random.Range(0, 1), Random.Range(-1, 1), 0);
             rb.velocity = move * speed;
         }
     }

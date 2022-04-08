@@ -12,4 +12,6 @@ class GlobalConstant
 
     public const string level1_1 = "level_1-1";
     public const string level1_2 = "level_1-2";
+
+    public const string level2_1 = "level_2-1";
 }

@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{E862636E-3F8A-8E91-03BD-4D3C21E8CFA9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -71,13 +70,15 @@
     <Compile Include="Assets\Scripts\Item\ItemData.cs" />
     <Compile Include="Assets\Scripts\Global\GlobalConstant.cs" />
     <Compile Include="Assets\Scripts\Level\PlayerHP.cs" />
+    <Compile Include="Assets\Scripts\boss\1-1\Boss_Shoot.cs" />
     <Compile Include="Assets\Scripts\Level\HpController.cs" />
     <Compile Include="Assets\Scripts\Login\userdata.cs" />
     <Compile Include="Assets\Scripts\EndScript.cs" />
     <Compile Include="Assets\Scripts\Level\ObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\Level\ItemsMove.cs" />
+    <Compile Include="Assets\Scripts\Level\HpPlayer.cs" />
     <Compile Include="Assets\Scripts\Level\Background.cs" />
-    <Compile Include="Assets\Scripts\Hydra\itemdata.cs" />
+    <Compile Include="Assets\Scripts\Bullet\laser.cs" />
     <Compile Include="Assets\Scripts\Rotationlevel.cs" />
     <Compile Include="Assets\Scripts\Level\GameWinScript.cs" />
     <Compile Include="Assets\Scripts\Level\Rotation.cs" />
@@ -86,9 +87,12 @@
     <Compile Include="Assets\Scripts\Level\AsteroidMove.cs" />
     <Compile Include="Assets\Scripts\Loading.cs" />
     <Compile Include="Assets\Scripts\Level\EnemyBullet.cs" />
+    <Compile Include="Assets\Scripts\boss\1-1\Boss_Move.cs" />
     <Compile Include="Assets\Scripts\SelectMission.cs" />
     <Compile Include="Assets\Scripts\Level\BorderScript.cs" />
     <Compile Include="Assets\Scripts\Level\Score.cs" />
+    <Compile Include="Assets\Scripts\Centaurus\CentaurusScript.cs" />
+    <Compile Include="Assets\Scripts\Hydra\itemdata.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

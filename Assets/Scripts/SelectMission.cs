@@ -35,7 +35,7 @@ public class SelectMission : MonoBehaviour
     }
     void CentEvent()
     {
-        PlayerPrefs.SetString("land", "cent");
+        PlayerPrefs.SetString("land", "centaurus");
         Application.LoadLevel(GlobalConstant.land2Name);
     }
     void AndroEvent()
@@ -45,7 +45,7 @@ public class SelectMission : MonoBehaviour
     }
     void DoradoEvent()
     {
-        PlayerPrefs.SetString("land", "dora");
+        PlayerPrefs.SetString("land", "dorado");
         Application.LoadLevel(GlobalConstant.land4Name);
     }
 }

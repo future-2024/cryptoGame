@@ -19,7 +19,6 @@ public class Boss_Shoot : MonoBehaviour
 
     IEnumerator LaserShoot() {
         Instantiate(laser, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(1);
-        
+        yield return new WaitForSeconds(1);        
     }
 }

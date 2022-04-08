@@ -14,7 +14,7 @@ public class ObjectSpawner : MonoBehaviour
     public Transform RightPosition;
     //delay between spawns
     public Transform LeftPosition;
-
+    public GameObject BGBossBar;
     public float spawnDelay;
     //array for prefabs, which should be spawn
     private Score score;
@@ -45,18 +45,18 @@ public class ObjectSpawner : MonoBehaviour
     {
         if (score.winBool == false && score.boss == false)
         {
-            //calculate random position between AsteroidSpawner and RighPosition
+            // calculate random position between AsteroidSpawner and RighPosition
             Vector3 spawnPos = new Vector3(Random.Range(LeftPosition.position.x, RightPosition.position.x), transform.position.y, 0);
-            //calculate random variable i between 0 and array length (number of members)
+            // calculate random variable i between 0 and array length (number of members)
             int i = Random.Range(0, enemyName.Count);
-//            Debug.Log(enemyName[i]);
+            // Debug.Log(enemyName[i]);
             Instantiate(Resources.Load(enemyName[i]), spawnPos, transform.rotation);
         }
         if (score.boss == true && on == false) {
+            BGBossBar.SetActive(true);
             StartCoroutine(Boss(enemies));
             Vector3 spawnPos = new Vector3(Random.Range(LeftPosition.position.x, RightPosition.position.x), transform.position.y, 0);
             int i = Random.Range(0, bossName.Count);
-            Debug.Log(bossName[i]);
             Instantiate(Resources.Load(bossName[i]), spawnPos, transform.rotation);
             on = true;
         }
