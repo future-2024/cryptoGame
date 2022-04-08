@@ -16,8 +16,8 @@ public class GameWinScript : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public Text nextLevelText;
     public string nextLevel;
-
     int cnt;
+
     // Start is called before the first frame update
     void Start()
     {
