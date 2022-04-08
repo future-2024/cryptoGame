@@ -24,11 +24,12 @@ public class ObjectSpawner : MonoBehaviour
     public List<string> bossName;
     GlobalConstant constants;
     public bool on = false;
+    HpController bossHpController;
 
     void Start()
     {
         score = GameObject.Find("ScoreManger").GetComponent<Score>();
-        
+        bossHpController = GameObject.Find("boss2-1").GetComponent<HpController>();
         //"Spawn" function will be called repeatedly
         InvokeRepeating("Spawn", 5, spawnDelay);
         enemies = new EnemyData()
@@ -117,6 +118,7 @@ public class ObjectSpawner : MonoBehaviour
                     for (int i = 0; i < tempArray.Count; i++)
                     {
                         bossName.Add((string)tempArray[i]["boss"]);
+                        bossHpController.hp = (int)tempArray[i]["hp"];
                     }
                 }
                 else
