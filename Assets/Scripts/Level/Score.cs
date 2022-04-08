@@ -18,7 +18,7 @@ public class Score : MonoBehaviour
     public int maxScore;
     public int score;
     public int power;
-    int i = 0;
+    public int i = 0;
     public bool winBool = false;
     public bool particle = false;
     public GameObject winGame;
@@ -30,6 +30,7 @@ public class Score : MonoBehaviour
     public Text countText;
     public Text winText;
     private itemdata items;
+    public bool boss;
 
     void Start()
     {
@@ -81,12 +82,16 @@ public class Score : MonoBehaviour
     }
     void afterWin()
     {
-        if (i == 0)
+        if (i == 0 && winBool == true)
         {
             Instantiate(win, ship.transform.position, Quaternion.identity);
             StartCoroutine(winParticle());
             i = 2;
+        } else {
+            boss = true;
+            //Debug.Log(boss);
         }
+
     }
     
     public IEnumerator Server(itemdata items)
@@ -130,7 +135,7 @@ public class Score : MonoBehaviour
     }
     IEnumerator winParticle()
     {
-        winBool = true;
+        //winBool = true;
         winText.text = "Mission Completed!";
         yield return new WaitForSeconds(5);
         particle = true;

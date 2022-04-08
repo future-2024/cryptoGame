@@ -88,6 +88,10 @@
     <Compile Include="Assets\Scripts\SelectMission.cs" />
     <Compile Include="Assets\Scripts\Level\BorderScript.cs" />
     <Compile Include="Assets\Scripts\Level\Score.cs" />
+    <Compile Include="Assets\Scripts\Bullet\laser.cs" />
+    <Compile Include="Assets\Scripts\boss\1-1\Boss_Shoot.cs" />
+    <Compile Include="Assets\Scripts\Level\HpPlayer.cs" />
+    <Compile Include="Assets\Scripts\boss\1-1\Boss_Move.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

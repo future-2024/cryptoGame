@@ -30,7 +30,7 @@ public class Loading : MonoBehaviour
 
     IEnumerator ChangeAfter2SecondsCoroutine()
     {
-        
+
         //Print the time of when the function is first called.
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
         //yield on a new YieldInstruction that waits for 2 seconds.
@@ -43,7 +43,7 @@ public class Loading : MonoBehaviour
     }
     void Update()
     {
-        
+
     }
     void LoadStatus()
     {

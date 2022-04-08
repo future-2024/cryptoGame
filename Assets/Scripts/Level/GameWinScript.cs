@@ -15,6 +15,7 @@ public class GameWinScript : MonoBehaviour
     public GameObject Brilliant;
     public TextMeshProUGUI ScoreText;
     public Text nextLevelText;
+    public string nextLevel;
 
     int cnt;
     // Start is called before the first frame update
@@ -65,7 +66,11 @@ public class GameWinScript : MonoBehaviour
     }
     void nextApp()
     {
-        if(nextLevelText)
+        if (nextLevelText)
+        {
+            
+            PlayerPrefs.SetString("level", nextLevel);
             Application.LoadLevel(nextLevelText.text);
+        }
     }
 }

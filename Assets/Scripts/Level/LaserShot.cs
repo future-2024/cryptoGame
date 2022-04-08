@@ -24,18 +24,18 @@ public class LaserShot : MonoBehaviour
         //declare Vector3 with force value on Y-axe
         if (playerScript.bulletMode == "speed")
         {
-            Vector3 directon = new Vector3(0, force * 5, 0);
+            Vector3 directon = new Vector3(0, force*5, 0);
             //add force push on rigidbody2D for moving on Y-axe
             rb.AddForce(directon, ForceMode2D.Impulse);
         }
         else
         {
-            Vector3 directon = new Vector3(0, force * 2, 0);
+            Vector3 directon = new Vector3(0, force*2, 0);
             //add force push on rigidbody2D for moving on Y-axe
             rb.AddForce(directon, ForceMode2D.Impulse);
         }
-
-
+        
+        
         //play sound (gameobject will be created at the position, which will play the sound and then destroy itself)
         AudioSource.PlayClipAtPoint(BulletSound, transform.position);
     }
@@ -49,7 +49,7 @@ public class LaserShot : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         //check if other gameobject has tag Enemy
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "boss")
         {
             //try to call MakeDamage on other gameobject, send damage as parameter for it
             if (playerScript.bulletMode == "default" || playerScript.bulletMode == "parallel" || playerScript.bulletMode == "speed")
@@ -57,7 +57,7 @@ public class LaserShot : MonoBehaviour
                 other.gameObject.SendMessage("MakeDamage", damage, SendMessageOptions.DontRequireReceiver);
                 Destroy(gameObject);
             }
-
+            
             //delete gameobject from scene
             else if (playerScript.bulletMode == "bulletpower")
             {

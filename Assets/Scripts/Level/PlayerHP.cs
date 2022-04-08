@@ -176,7 +176,6 @@ public class PlayerHP : MonoBehaviour
         }
         if (hp <= 0)
         {
-            Debug.Log("SpaceShip will be died!!!!");
             afterOver();
         }
     }

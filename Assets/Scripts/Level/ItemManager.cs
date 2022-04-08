@@ -41,9 +41,11 @@ public class ItemManager : MonoBehaviour
         //calculate random position between AsteroidSpawner and RighPosition
         Vector3 spawnPos = new Vector3(Random.Range(-width, width), transform.position.y, 0);
         //calculate random variable i between 0 and array length (number of members)
-        int i = Random.Range(0, itm.Count-1);
+        int i = Random.Range(0, itm.Count);
+        Debug.Log("count"+itm.Count);
+        Debug.Log("random"+i);
         //place prefab at calculated position
-        Debug.Log(itm[i]);
+//        Debug.Log(itm[i]);
         Instantiate(Resources.Load(itm[i]), spawnPos, transform.rotation);
     }
     public IEnumerator Items(ItemData itemm)

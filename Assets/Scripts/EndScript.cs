@@ -14,6 +14,7 @@ public class EndScript : MonoBehaviour
         Button btnExit = quit.GetComponent<Button>();
         btnExit.onClick.AddListener(ExitApp);
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,15 +22,14 @@ public class EndScript : MonoBehaviour
     }
     IEnumerator ChangeAfter2SecondsCoroutine()
     {
+
         //Print the time of when the function is first called.
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
         //yield on a new YieldInstruction that waits for 2 seconds.
         yield return new WaitForSeconds(1);
 
         //After we have waited 2 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-
         //And load the scene
         Application.Quit();
     }
