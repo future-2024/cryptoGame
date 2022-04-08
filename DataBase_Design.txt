@@ -1,0 +1,16 @@
+-users
+	=name, email, password, timestamp, max_land, max_level
+	=name, email, password, timestamp
+	=name, email, password, timestamp
+	=name, email, password, timestamp
+-score
+		==level1, level1-1 score1
+		==level1, level1-1 score1
+		==level1, level1-1 score1
+		==level1, level1-1 score1
+- item
+	=name, type, 
+	=name, type, 
+	=name, type, 
+	=name, type, 
+...

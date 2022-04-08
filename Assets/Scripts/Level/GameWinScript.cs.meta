@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 80f399062525bab4db4257d841d20584
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - nLevelBut: {instanceID: 0}
+  - eixtBut: {instanceID: 0}
+  - restartBut: {instanceID: 0}
+  - gamewinObject: {instanceID: 0}
+  - Brilliant: {fileID: 4031951526451703566, guid: e93db2786056cf140baf9b036cf95c12, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
