@@ -50,7 +50,7 @@ public class ObjectSpawner : MonoBehaviour
             Vector3 spawnPos = new Vector3(Random.Range(LeftPosition.position.x, RightPosition.position.x), transform.position.y, 0);
             // calculate random variable i between 0 and array length (number of members)
             int i = Random.Range(0, enemyName.Count);
-            // Debug.Log(enemyName[i]);
+            Debug.Log(enemyName[i]);
             Instantiate(Resources.Load(enemyName[i]), spawnPos, transform.rotation);
         }
         if (score.boss == true && on == false) {
