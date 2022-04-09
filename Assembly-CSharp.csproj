@@ -93,6 +93,23 @@
     <Compile Include="Assets\Scripts\Level\Score.cs" />
     <Compile Include="Assets\Scripts\Centaurus\CentaurusScript.cs" />
     <Compile Include="Assets\Scripts\Hydra\itemdata.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\CleanButtonConfig.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\SceneTransition.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\URLOpener.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\CleanButton.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\Tooltip.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\Utils.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\Gradient.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\SpriteSwapper.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\Transition.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\PopupOpener.cs" />
+    <Compile Include="Assets\GUIPack\Demo\Scripts\Popup.cs" />
+    <Compile Include="Assets\SCIPack\Common\Scripts\CircleSlider.cs" />
+    <Compile Include="Assets\SCIPack\Common\Scripts\JustRotate.cs" />
+    <Compile Include="Assets\SCIPack\Common\Scripts\SliderValuePass.cs" />
+    <Compile Include="Assets\SCIPack\Common\Scripts\SimpleProgress1.cs" />
+    <Compile Include="Assets\SCIPack\Common\Scripts\SliderRunTo1.cs" />
+    <Compile Include="Assets\SCIPack\Common\Scripts\PressedBtn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -112,8 +129,10 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\GUIPack\Demo\Fonts\Roboto Condensed\Apache License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\GUIPack\Demo\Fonts\Roboto\Apache License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
