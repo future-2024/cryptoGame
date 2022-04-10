@@ -11,12 +11,12 @@ public class Loading : MonoBehaviour
     public Text text;
     public Text powerText;
 
-    Image LoadBarImage;
+    Slider LoadBarImage;
     private int cnt = 0;
     void Start()
     {
-        LoadBarImage = LoadBar.GetComponent<Image>();
-        LoadBarImage.fillAmount = 0;
+        LoadBarImage = LoadBar.GetComponent<Slider>();
+        LoadBarImage.value = 0;
         //StartCoroutine(LoadNextLevel());
         //Start the coroutine we define below named ChangeAfter2SecondsCoroutine().
         StartCoroutine(ChangeAfter2SecondsCoroutine());
@@ -48,8 +48,8 @@ public class Loading : MonoBehaviour
     void LoadStatus()
     {
         cnt++;
-        LoadBarImage.fillAmount = cnt / 400.0f;
-        text.text = (cnt / 4).ToString() + "%";
+        LoadBarImage.value = cnt / 400.0f;
+        //text.text = (cnt / 4).ToString() + "%";
     }
     public IEnumerator FadeTextToFullAlpha(float t, Text i)
     {
