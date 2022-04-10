@@ -276,19 +276,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7713849418794307095, guid: b043f83e3cd14a1418487ae078cd084c, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.92941177
       objectReference: {fileID: 0}
     - target: {fileID: 7713849418794307095, guid: b043f83e3cd14a1418487ae078cd084c, type: 3}
       propertyPath: m_Color.b
-      value: 0.7264151
+      value: 0.28292987
       objectReference: {fileID: 0}
     - target: {fileID: 7713849418794307095, guid: b043f83e3cd14a1418487ae078cd084c, type: 3}
       propertyPath: m_Color.g
-      value: 0.7264151
+      value: 0.46191147
       objectReference: {fileID: 0}
     - target: {fileID: 7713849418794307095, guid: b043f83e3cd14a1418487ae078cd084c, type: 3}
       propertyPath: m_Color.r
-      value: 0.7264151
+      value: 0.8018868
       objectReference: {fileID: 0}
     - target: {fileID: 7714042563367352505, guid: b043f83e3cd14a1418487ae078cd084c, type: 3}
       propertyPath: m_Text
@@ -1013,7 +1013,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993014687}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
