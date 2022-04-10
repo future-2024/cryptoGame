@@ -6,6 +6,7 @@ public class HydraScript : MonoBehaviour
 {
     public Button level_1;
     public Button level_2;
+    public Button back;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,9 @@ public class HydraScript : MonoBehaviour
         
         Button levelBut_2 = level_2.GetComponent<Button>();
         levelBut_2.onClick.AddListener(level2);
+
+        Button backBtn = back.GetComponent<Button>();
+        backBtn.onClick.AddListener(backFun);
     }
 
     // Update is called once per frame
@@ -30,5 +34,9 @@ public class HydraScript : MonoBehaviour
     {
         PlayerPrefs.SetString("level", "2");
         Application.LoadLevel(GlobalConstant.level1_2);
+    }
+    void backFun()
+    {
+        Application.LoadLevel(GlobalConstant.landList);
     }
 }

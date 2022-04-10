@@ -39,7 +39,7 @@ public class Loading : MonoBehaviour
         //After we have waited 2 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         //And load the scene
-        Application.LoadLevel("LandList");
+        Application.LoadLevel(GlobalConstant.landList);
     }
     void Update()
     {

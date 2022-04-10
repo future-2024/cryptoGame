@@ -82,8 +82,7 @@ public class PlayerHP : MonoBehaviour
             hp += 5;            
         }
         if (other.gameObject.tag == "shield")
-        {
-			
+        {			
             shieldDetected = true;
             StartCoroutine(shield());
             Destroy(other.gameObject);           

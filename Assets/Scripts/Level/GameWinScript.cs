@@ -13,8 +13,8 @@ public class GameWinScript : MonoBehaviour
     public GameObject gamewinObject;
     private Score scoreScript;
     public GameObject Brilliant;
-    public TextMeshProUGUI ScoreText;
-    public Text nextLevelText;
+    public Text ScoreText;
+    public string nextLevelText;
     public string nextLevel;
     int cnt;
 
@@ -66,11 +66,7 @@ public class GameWinScript : MonoBehaviour
     }
     void nextApp()
     {
-        if (nextLevelText)
-        {
-            
-            PlayerPrefs.SetString("level", nextLevel);
-            Application.LoadLevel(nextLevelText.text);
-        }
+        PlayerPrefs.SetString("level", nextLevel);
+        Application.LoadLevel(nextLevelText);
     }
 }

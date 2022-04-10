@@ -3,7 +3,11 @@ class GlobalConstant
     public const string apiURL = "localhost:3001";
 
     public const string LoadingScene = "Loading";
+    public const string Login = "Login";
+    public const string SignUp = "SignUp";
     public const string EndScene = "End";
+
+    public const string landList = "LandList";
 
     public const string land1Name = "HydraList";
     public const string land2Name = "CentaurusList";
