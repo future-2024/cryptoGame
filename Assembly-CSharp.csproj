@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\SelectMission.cs" />
     <Compile Include="Assets\Scripts\Level\BorderScript.cs" />
     <Compile Include="Assets\Scripts\Level\Score.cs" />
+    <Compile Include="Assets\Scripts\Keydown.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
