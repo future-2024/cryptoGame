@@ -14,6 +14,8 @@ public class login : MonoBehaviour
     public InputField password;
     public Text alert;
 
+    public GameObject signUpObject;
+
     public string url2 = GlobalConstant.apiURL + "/login";
     public Button SignUp;
     void Start()
@@ -23,6 +25,8 @@ public class login : MonoBehaviour
 
         Button SignUpBtn = SignUp.GetComponent<Button>();
         SignUpBtn.onClick.AddListener(signUp);
+
+        url2 = GlobalConstant.apiURL + "/login";
     }
 
     void LogIn()
@@ -37,7 +41,8 @@ public class login : MonoBehaviour
     }
     void signUp()
     {
-        Application.LoadLevel(GlobalConstant.SignUp);
+        signUpObject.SetActive(true);
+        // Application.LoadLevel(GlobalConstant.SignUp);
     }
     public IEnumerator Log(string url2, userdata user)
     {
@@ -50,7 +55,7 @@ public class login : MonoBehaviour
             www.uploadHandler.contentType = "application/json";
             www.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(jsonData));
             yield return www.SendWebRequest();
-
+            Debug.Log(url2);
             if (www.isNetworkError)
             {
                 Debug.Log(www.error);

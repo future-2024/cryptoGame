@@ -18,8 +18,8 @@ public class signUp : MonoBehaviour
 
     public Button login;
 
-    public string url = GlobalConstant.apiURL + "/users";
-    public string url2 = GlobalConstant.apiURL + "/login";
+    public string url;
+    public string url2;
     Rigidbody2D LeftDoorRigid;
     Rigidbody2D RightDoorRigid;
     
@@ -31,6 +31,9 @@ public class signUp : MonoBehaviour
 
         Button loginBtn = login.GetComponent<Button>();
         loginBtn.onClick.AddListener(loginFun);
+
+        url = GlobalConstant.apiURL + "/users";
+        url2 = GlobalConstant.apiURL + "/login";
     }
 
     // Update is called once per frame
@@ -46,7 +49,7 @@ public class signUp : MonoBehaviour
     }
     void loginFun()
     {
-        Application.LoadLevel(GlobalConstant.Login);
+        gameObject.SetActive(false);
     }
     public IEnumerator Sign(string url, userdata user)
     {
@@ -78,7 +81,7 @@ public class signUp : MonoBehaviour
                         username.text = "";
                         email.text = "";
                         password.text = "";
-                        Application.LoadLevel(GlobalConstant.Login);
+                        gameObject.SetActive(false);
                     } else if(result == "exist")
                     {
                         alert.text = "User already exists";

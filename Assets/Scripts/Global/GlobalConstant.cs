@@ -1,6 +1,6 @@
 class GlobalConstant
 {
-    public const string apiURL = "localhost:3001";
+    public const string apiURL = "http://localhost:3001";
 
     public const string LoadingScene = "Loading";
     public const string Login = "Login";
