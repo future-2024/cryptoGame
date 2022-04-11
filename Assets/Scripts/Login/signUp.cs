@@ -92,7 +92,6 @@ public class signUp : MonoBehaviour
                 }
                 else
                 {
-                    //handle the problem
                     alert.text = "Error! data couldn't get.";
                 }
             }
