@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Keydown : MonoBehaviour
 {
-    public AudioSource mySound;
+    public AudioClip mySound;
 
     // Use this for initialization
     void Start()
     {
-        var audioClip = Resources.Load<AudioClip>("05 - Listen to the Man_[plixid.com]");  //Load the AudioClip from the Resources Folder
-        mySound.clip = audioClip;  //Assign it as AudioSource's clip
+        //var audioClip = Resources.Load<AudioClip>("05 - Listen to the Man_[plixid.com]");  //Load the AudioClip from the Resources Folder
+        //mySound.clip = audioClip;  //Assign it as AudioSource's clip
+        //audio.PlayOneShot(mySound);        
     }
 
     void Update()
@@ -18,8 +19,8 @@ public class Keydown : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             Debug.Log("100");
-            print("space key was pressed");
-            mySound.Play();            
+            AudioSource.PlayClipAtPoint(mySound, transform.position);
+            //print("space key was pressed");          
         }  //Also, I removed the extra semi-colon you had here
     }
 }
