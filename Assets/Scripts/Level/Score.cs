@@ -12,6 +12,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     // public static Score Instance { get; private set; }SW
     public string url;
+    public string saveHistoryUrl;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI powerText;
     public TextMeshProUGUI maxScoreText;
@@ -30,15 +31,19 @@ public class Score : MonoBehaviour
     public Text countText;
     public Text winText;
     private itemdata items;
+    private HistoryItem historyItem;
     public bool boss;
     ObjectSpawner objectSpawners;
+    private TimeScript timeManage;
 
     void Start()
     {
         url = GlobalConstant.apiURL + "/level";
+        saveHistoryUrl = GlobalConstant.apiURL + "/playHistory";
         itemScript = GameObject.Find("itemmanager").GetComponent<ItemManager>();
         hpScript = GameObject.Find("SpaceShip").GetComponent<PlayerHP>();
         objectSpawners = GameObject.Find("AsteroidSpawner").GetComponent<ObjectSpawner>();
+        timeManage = GameObject.Find("Border").GetComponent<TimeScript>();
         score = 0;
         i = 0;
         if (scoreText)
@@ -144,6 +149,44 @@ public class Score : MonoBehaviour
         yield return new WaitForSeconds(5);
         particle = true;
         winText.text = " ";
+        StartCoroutine(SaveData());
         winGame.SetActive(true);
+    }
+    public IEnumerator SaveData()
+    {
+        historyItem = new HistoryItem()
+        {
+            land = PlayerPrefs.GetString("land"),
+            level = PlayerPrefs.GetString("level"),
+            time = timeManage.timerText,
+            hp = 5,
+        };
+        var jsonData = JsonUtility.ToJson(historyItem);
+        using (UnityWebRequest www = UnityWebRequest.Post(saveHistoryUrl, jsonData))
+        {
+            www.SetRequestHeader("content-type", "application/json");
+            www.uploadHandler.contentType = "application/json";
+            www.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(jsonData));
+
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                if (www.isDone)
+                {
+                    var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+                    var tempArray = JObject.Parse(www.downloadHandler.text);
+                    Debug.Log(tempArray);
+                }
+                else
+                {
+                    Debug.Log("Error! data couldn't get.");
+                }
+            }
+        }
     }
 }

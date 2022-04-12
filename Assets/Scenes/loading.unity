@@ -904,8 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadBar: {fileID: 440639095}
-  text: {fileID: 0}
-  powerText: {fileID: 2011158919}
+  text: {fileID: 2011158919}
 --- !u!1 &1665267019
 GameObject:
   m_ObjectHideFlags: 0

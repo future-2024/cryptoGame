@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Level\Score.cs" />
     <Compile Include="Assets\Scripts\KeyEvent.cs" />
     <Compile Include="Assets\Scripts\Level\TimeScript.cs" />
+    <Compile Include="Assets\Scripts\Level\HistoryItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
