@@ -105,13 +105,15 @@
     <Compile Include="Assets\Scripts\Level\ModalScript.cs" />
     <Compile Include="Assets\GUIPack\Demo\Scripts\SpriteSwapper.cs" />
     <Compile Include="Assets\Scripts\Level\AsteroidMove.cs" />
+    <Compile Include="Assets\Scripts\Keydown.cs" />
     <Compile Include="Assets\Scripts\Loading.cs" />
     <Compile Include="Assets\Scripts\Level\EnemyBullet.cs" />
     <Compile Include="Assets\Scripts\boss\1-1\Boss_Move.cs" />
     <Compile Include="Assets\Scripts\SelectMission.cs" />
     <Compile Include="Assets\Scripts\Level\BorderScript.cs" />
     <Compile Include="Assets\Scripts\Level\Score.cs" />
-    <Compile Include="Assets\Scripts\Keydown.cs" />
+    <Compile Include="Assets\Scripts\KeyEvent.cs" />
+    <Compile Include="Assets\Scripts\Level\TimeScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

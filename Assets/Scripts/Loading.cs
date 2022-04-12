@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -67,6 +67,40 @@ public class Loading : MonoBehaviour
         while (i.color.a > 0.0f)
         {
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+            yield return null;
+        }
+    }
+}*/
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+using System.Collections;
+
+public class Loading : MonoBehaviour
+{
+    public GameObject LoadBar;
+    public Text text;
+
+    Slider LoadBarImage;
+    void Start()
+    {
+        LoadBarImage = LoadBar.GetComponent<Slider>();
+        LoadBarImage.value = 0;
+        StartCoroutine(LoadSceneAsync(GlobalConstant.landList));
+    }
+
+    IEnumerator LoadSceneAsync(string levelName)
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(levelName);
+
+        while (!op.isDone)
+        {
+            float progress = Mathf.Clamp01(op.progress / .9f);
+            Debug.Log(op.progress);
+            LoadBarImage.value = progress;
+            text.text = progress * 100 + "%";
             yield return null;
         }
     }
