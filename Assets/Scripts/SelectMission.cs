@@ -21,8 +21,9 @@ public class SelectMission : MonoBehaviour
         androBut.onClick.AddListener(AndroEvent);
         Button doraBut = Dorado.GetComponent<Button>();
         doraBut.onClick.AddListener(DoradoEvent);
-    }
 
+
+    }
     // Update is called once per frame
     void Update()
     {
