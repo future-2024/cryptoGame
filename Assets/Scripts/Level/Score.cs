@@ -156,10 +156,12 @@ public class Score : MonoBehaviour
     {
         historyItem = new HistoryItem()
         {
+            userName = PlayerPrefs.GetString("userName"),
             land = PlayerPrefs.GetString("land"),
             level = PlayerPrefs.GetString("level"),
-            time = timeManage.timerText,
-            hp = 5,
+            time = (int)timeManage.miliSecond,
+            hp = hpScript.hp,
+            itemCnt = hpScript.itemCnt,
         };
         var jsonData = JsonUtility.ToJson(historyItem);
         using (UnityWebRequest www = UnityWebRequest.Post(saveHistoryUrl, jsonData))
@@ -179,8 +181,8 @@ public class Score : MonoBehaviour
                 if (www.isDone)
                 {
                     var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
-                    var tempArray = JObject.Parse(www.downloadHandler.text);
-                    Debug.Log(tempArray);
+                    //var tempArray = JObject.Parse(www.downloadHandler.text);
+                    Debug.Log(result);
                 }
                 else
                 {

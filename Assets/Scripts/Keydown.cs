@@ -24,9 +24,6 @@ public class Keydown : MonoBehaviour
             if (Input.GetKeyDown(vKey))
             {
                 Debug.Log("keydown");
-            }
-            else
-            {
                 AudioSource.PlayClipAtPoint(mySound, transform.position);
             }
         }

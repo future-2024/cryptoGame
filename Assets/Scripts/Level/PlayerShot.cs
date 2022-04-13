@@ -70,14 +70,12 @@ public class PlayerShot : MonoBehaviour {
             bulletMode = other.gameObject.tag;
             Destroy(other.gameObject);
             StartCoroutine(FireAct());
-
         }
         else if (other.gameObject.tag == "bulletpower")
         {
             bulletMode = other.gameObject.tag;
             Destroy(other.gameObject);
             StartCoroutine(FireAct());
-
         }
         else if (other.gameObject.tag == "speed")
         {
@@ -94,7 +92,7 @@ public class PlayerShot : MonoBehaviour {
         canShoot = true;
     }
     IEnumerator FireAct () { 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(GlobalConstant.itemDelay);
         bulletMode = "default";
     }
     public IEnumerator Bullet()

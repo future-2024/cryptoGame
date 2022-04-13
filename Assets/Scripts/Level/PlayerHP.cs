@@ -32,7 +32,7 @@ public class PlayerHP : MonoBehaviour
     public int maxHp;
     float tm;
     bool hhh = true;
-    float itemTime = 10;
+    float itemTime = (float)GlobalConstant.itemDelay;
     float preTime;
     public bool gameOver = false;
     public bool shieldDetected = false;
@@ -46,9 +46,12 @@ public class PlayerHP : MonoBehaviour
     public GameObject explosion;
     private SpriteRenderer sprite;
     public GameObject hpbar;
+
+    public int itemCnt;
     
     void Start()
     {
+        itemCnt = 0;
         gameObject.SetActive(false);
         sprite = gameObject.GetComponent<SpriteRenderer>();
         i = 0;
@@ -75,11 +78,11 @@ public class PlayerHP : MonoBehaviour
     //will be called from the scripts on other gameobjects (like Bullet)
     void OnCollisionEnter2D(Collision2D other)
     {
-
         //check Tag of touched gameobject
         if (other.gameObject.tag == "hp")
         {
-            hp += 5;            
+            hp += 5;
+            itemCnt++;
         }
         if (other.gameObject.tag == "shield")
         {			
@@ -89,50 +92,57 @@ public class PlayerHP : MonoBehaviour
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
             Destroy(other.gameObject);
+            itemCnt++;
         }
         if (other.gameObject.tag == "bulletpower")
         {
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
             Destroy(other.gameObject);
+            itemCnt++;
         }
         if (other.gameObject.tag == "parallel")
         {
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
             Destroy(other.gameObject);
+            itemCnt++;
         }
         if (other.gameObject.tag == "speed")
         {
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
             Destroy(other.gameObject);
+            itemCnt++;
         }
         if (other.gameObject.tag == "through")
         {
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
             Destroy(other.gameObject);
+            itemCnt++;
         }
         if (other.gameObject.tag == "fly")
         {
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
             Destroy(other.gameObject);
+            itemCnt++;
         }
         if (other.gameObject.tag == "hp")
         {
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
             Destroy(other.gameObject);
+            itemCnt++;
         }
         if (other.gameObject.tag == "speedUp")
         {
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
             Destroy(other.gameObject);
+            itemCnt++;
         }
-
     }
     void MakeDamage(int damage)
     {

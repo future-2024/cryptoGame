@@ -7,7 +7,7 @@ public class TimeScript : MonoBehaviour
 {
     //This script should be attached to a UI Text element
     public Text timerText;
-    private float miliSecond;
+    public float miliSecond;
     private float secondsCount;
     private int minuteCount;
     private int hourCount;

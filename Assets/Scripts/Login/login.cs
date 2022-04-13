@@ -36,7 +36,7 @@ public class login : MonoBehaviour
             name = username.text,
             pass = password.text
         };
-        PlayerPrefs.SetString("name", username.text);
+        PlayerPrefs.SetString("userName", username.text);
         StartCoroutine(Log(url2, user));
     }
     void signUp()

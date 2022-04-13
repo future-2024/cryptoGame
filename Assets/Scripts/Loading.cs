@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -70,7 +70,8 @@ public class Loading : MonoBehaviour
             yield return null;
         }
     }
-}*/
+}
+/*
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -104,4 +105,4 @@ public class Loading : MonoBehaviour
             yield return null;
         }
     }
-}
+}*/
