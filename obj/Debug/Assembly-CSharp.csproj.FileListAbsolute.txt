@@ -351,3 +351,7 @@ E:\Task\2022-03-22-unity\2022-04-08\interstellar\obj\Debug\Assembly-CSharp.cspro
 E:\Task\2022-03-22-unity\2022-04-08\interstellar\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 E:\Task\2022-03-22-unity\2022-04-08\interstellar\obj\Debug\Assembly-CSharp.dll
 E:\Task\2022-03-22-unity\2022-04-08\interstellar\obj\Debug\Assembly-CSharp.pdb
+E:\MyData\freelancer-2022\March\cryptoGame_Kris\SpaceshipShooter\cryptoGame\obj\Debug\Assembly-CSharp.csproj.AssemblyReference.cache
+E:\MyData\freelancer-2022\March\cryptoGame_Kris\SpaceshipShooter\cryptoGame\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+E:\MyData\freelancer-2022\March\cryptoGame_Kris\SpaceshipShooter\cryptoGame\obj\Debug\Assembly-CSharp.dll
+E:\MyData\freelancer-2022\March\cryptoGame_Kris\SpaceshipShooter\cryptoGame\obj\Debug\Assembly-CSharp.pdb

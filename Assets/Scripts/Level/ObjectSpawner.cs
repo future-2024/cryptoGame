@@ -38,8 +38,7 @@ public class ObjectSpawner : MonoBehaviour
             level = PlayerPrefs.GetString("level"),
         };
         StartCoroutine(Enemy(enemies));
-
-
+        StartCoroutine(Boss(enemies));
     }
     //spawn function
     void Spawn()
@@ -50,15 +49,13 @@ public class ObjectSpawner : MonoBehaviour
             Vector3 spawnPos = new Vector3(Random.Range(LeftPosition.position.x, RightPosition.position.x), transform.position.y, 0);
             // calculate random variable i between 0 and array length (number of members)
             int i = Random.Range(0, enemyName.Count);
-            Debug.Log(enemyName[i]);
+            //Debug.Log(enemyName[i]);
             Instantiate(Resources.Load(enemyName[i]), spawnPos, transform.rotation);
         }
         if (score.boss == true && on == false) {
             BGBossBar.SetActive(true);
-            StartCoroutine(Boss(enemies));
             Vector3 spawnPos = new Vector3(Random.Range(LeftPosition.position.x, RightPosition.position.x), transform.position.y, 0);
-            int i = Random.Range(0, bossName.Count);
-            Instantiate(Resources.Load(bossName[i]), spawnPos, transform.rotation);
+            Instantiate(Resources.Load(bossName[0]), spawnPos, transform.rotation);
             on = true;
         }
     }
@@ -118,12 +115,15 @@ public class ObjectSpawner : MonoBehaviour
                     for (int i = 0; i < tempArray.Count; i++)
                     {
                         bossName.Add((string)tempArray[i]["boss"]);
+                        
                         bossHpController = ((GameObject)Resources.Load(bossName[0])).GetComponent<HpController>();
                         if (bossHpController.gameObject.tag == "boss")
                         {
                             bossHpController.hp = (int)tempArray[i]["hp"];
+                            Debug.Log("bossname" + bossHpController.hp);
                         }
-                    }                   
+                    }
+                   // Vector3 spawnPos = new Vector3(Random.Range(LeftPosition.position.x, RightPosition.position.x), transform.position.y, 0);
                 }
                 else
                 {
