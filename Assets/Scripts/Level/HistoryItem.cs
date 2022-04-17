@@ -16,9 +16,19 @@ public class HistoryItem
     public int hp;
     public int itemCnt;
 }
-
+[System.Serializable]
+public class HistoryEvent
+{
+    public LandVariable[] events;
+}
 [System.Serializable]
 public class UserItem
 {
     public string userName;
+}
+[System.Serializable]
+public class LandVariable
+{
+    public bool show = false;
+    public int cntLevel = 0;
 }

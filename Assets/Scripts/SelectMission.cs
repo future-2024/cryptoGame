@@ -17,6 +17,12 @@ public class SelectMission : MonoBehaviour
     public Button Dorado;
     public List<string> mission;
     private string url;
+    private GameObject window;
+    //Dictionary<int, GameObject> blackMaskobject;
+    List<GameObject> blackMaskobject;
+    List<GameObject> imgArray;
+    List<GameObject> starArray;
+    
     void Start()
     {
         url = GlobalConstant.apiURL + "/playHistory";
@@ -28,7 +34,16 @@ public class SelectMission : MonoBehaviour
         androBut.onClick.AddListener(AndroEvent);
         Button doraBut = Dorado.GetComponent<Button>();
         doraBut.onClick.AddListener(DoradoEvent);
-
+        
+        window = GameObject.Find("Scroll View/Viewport/Content").gameObject;
+        blackMaskobject = new List<GameObject>();
+        imgArray = new List<GameObject>();
+        starArray = new List<GameObject>();
+        for (int cnt = 0; cnt < window.transform.childCount; cnt++) {
+            blackMaskobject.Add(window.transform.GetChild(cnt).gameObject.transform.Find("BlackMask").gameObject);
+            imgArray.Add(window.transform.GetChild(cnt).gameObject.transform.Find("Image").gameObject);
+            starArray.Add(window.transform.GetChild(cnt).gameObject.transform.Find("LevelStars").gameObject);
+        }
         StartCoroutine(GetPlayHistory());
     }
     // Update is called once per frame
@@ -38,22 +53,22 @@ public class SelectMission : MonoBehaviour
     }
     void HydroEvent()
     {
-        PlayerPrefs.SetString("land", "hydro");
+        PlayerPrefs.SetString("land", GlobalConstant.land1Name);
         Application.LoadLevel(GlobalConstant.land1Name);
     }
     void CentEvent()
     {
-        PlayerPrefs.SetString("land", "centaurus");
+        PlayerPrefs.SetString("land", GlobalConstant.land2Name);
         Application.LoadLevel(GlobalConstant.land2Name);
     }
     void AndroEvent()
     {
-        PlayerPrefs.SetString("land", "andro");
+        PlayerPrefs.SetString("land", GlobalConstant.land3Name);
         Application.LoadLevel(GlobalConstant.land3Name);
     }
     void DoradoEvent()
     {
-        PlayerPrefs.SetString("land", "dorado");
+        PlayerPrefs.SetString("land", GlobalConstant.land4Name);
         Application.LoadLevel(GlobalConstant.land4Name);
     }
     public IEnumerator GetPlayHistory()
@@ -79,22 +94,19 @@ public class SelectMission : MonoBehaviour
                 if (www.isDone)
                 {
                     var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
-                   // var tempArray = JArray.Parse(www.downloadHandler.text);
-                   // for (var cnt = 0; cnt < tempArray.Count; cnt++)
-                   // {
-                   //       mission.Add((string)tempArray[cnt]["land"], (string)tempArray[cnt]["level"]);
-                   //       mission.Add((string)tempArray[cnt]["level"]);
-                   //       mission.Add((string)tempArray[cnt]["userName"]);
-                   //       mission.Add((string)tempArray[cnt]["time"]);
-                   //       mission.Add((string)tempArray[cnt]["levelScore"]);
-                   //       mission.Add((string)tempArray[cnt]["starCnt"]);
-                   //       Debug.Log("sss"+mission[0]);
-                   // }
-                   // HistoryArray historyArray = JsonUtility.FromJson<HistoryArray>(www.downloadHandler.text);
-                   // Debug.Log(tempArray);
-                   // JavaScriptSerializer js = new JavaScriptSerializer();
-                   // HistoryItem[] history = js.Deserialize<HistoryItem[]>(result);
-                   // Debug.Log(history);
+                    result = "{\"events\":" + result + "}";
+                    HistoryEvent playerHistory = JsonUtility.FromJson<HistoryEvent>(result);
+                    for (int cnt = 0; cnt < playerHistory.events.Length; cnt++)
+                    {
+                        blackMaskobject[cnt].SetActive(false);
+                        imgArray[cnt].SetActive(false);
+                        for(int cnt2 = 0; cnt2 < playerHistory.events[cnt].cntLevel; cnt2 ++)
+                        {
+                            Debug.Log(starArray[cnt]);
+                            starArray[cnt].transform.GetChild(cnt2 + 1).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        }
+                        
+                    }
                 }
                 else
                 {
