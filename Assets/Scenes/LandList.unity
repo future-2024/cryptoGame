@@ -884,6 +884,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8260858782753086132, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8260858782762530161, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -952,6 +956,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8260858783158403505, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8260858783162426792, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 0
@@ -979,6 +987,10 @@ PrefabInstance:
     - target: {fileID: 8260858783287855935, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8260858783328363178, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8260858783336061528, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
       propertyPath: m_Type
@@ -1072,6 +1084,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8260858783817264213, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8260858783829118642, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1114,6 +1130,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8260858783910468470, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8260858783948498790, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8260858783950989905, guid: 1916811961fc0c14899a87c6b0b69473, type: 3}

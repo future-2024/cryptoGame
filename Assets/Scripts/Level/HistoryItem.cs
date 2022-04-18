@@ -21,6 +21,22 @@ public class HistoryEvent
 {
     public LandVariable[] events;
 }
+
+
+[System.Serializable]
+public class LevelItem
+{
+    public string userName;
+    public string land;
+    public string level;
+    public int starCnt;
+}
+public class LevelEvent
+{
+    public LevelItem[] events;
+}
+
+
 [System.Serializable]
 public class UserItem
 {

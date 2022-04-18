@@ -97,15 +97,22 @@ public class SelectMission : MonoBehaviour
                     result = "{\"events\":" + result + "}";
                     HistoryEvent playerHistory = JsonUtility.FromJson<HistoryEvent>(result);
                     for (int cnt = 0; cnt < playerHistory.events.Length; cnt++)
-                    {
+                    {                        
                         blackMaskobject[cnt].SetActive(false);
                         imgArray[cnt].SetActive(false);
-                        for(int cnt2 = 0; cnt2 < playerHistory.events[cnt].cntLevel; cnt2 ++)
+                        window.transform.GetChild(cnt).GetComponent<Button>().interactable = true;
+                        for(int cnt2 = 0; cnt2 < playerHistory.events[cnt].cntLevel; cnt2++)
                         {
                             Debug.Log(starArray[cnt]);
                             starArray[cnt].transform.GetChild(cnt2 + 1).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.SetActive(true);
                         }
                         
+                    }
+                    if (playerHistory.events.Length == 0)
+                    {
+                        blackMaskobject[0].SetActive(false);
+                        imgArray[0].SetActive(false);
+                        window.transform.GetChild(0).GetComponent<Button>().interactable = true;
                     }
                 }
                 else
