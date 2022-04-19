@@ -18,7 +18,6 @@ public class PlayerMove : MonoBehaviour {
     private float heightd;
     
     Collider2D m_ObjectCollider;
-
     //we will need reference to Players Rigidbody2D
     Rigidbody2D rb;
 
@@ -28,7 +27,6 @@ public class PlayerMove : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         m_ObjectCollider = GetComponent<Collider2D>();
     }
-
     //will be executed every frame
     void OnCollisionEnter2D(Collision2D collid)
     {
@@ -44,7 +42,6 @@ public class PlayerMove : MonoBehaviour {
             m_ObjectCollider.isTrigger = true;
             StartCoroutine(fly());
         }
-
     }
     IEnumerator speedup()
     {
@@ -57,16 +54,15 @@ public class PlayerMove : MonoBehaviour {
         m_ObjectCollider.isTrigger = false;
         Debug.Log("here");
     }
-    
     void Update () {    
-            widthd = Screen.width / Screen.dpi;
-            width = (float)widthd;
+        widthd = Screen.width / Screen.dpi;
+        width = (float)widthd;
 
-            heightd = Screen.height / Screen.dpi;
-            height = (float)heightd;
+        heightd = Screen.height / Screen.dpi;
+        height = (float)heightd;
 
-            move.x = Input.GetAxis("Horizontal");
-            move.y = Input.GetAxis("Vertical");
+        move.x = Input.GetAxis("Horizontal");
+        move.y = Input.GetAxis("Vertical");
     }
     void FixedUpdate () {
         rb.velocity = new Vector2 (move.x, move.y) * speed;
@@ -85,8 +81,7 @@ public class PlayerMove : MonoBehaviour {
         }
         if(transform.position.y > height)
         {
-            transform.position = new Vector2(transform.position.x, height);
-            
+            transform.position = new Vector2(transform.position.x, height);            
         }
         if ( transform.position.y < -height)
         {
@@ -96,8 +91,7 @@ public class PlayerMove : MonoBehaviour {
     IEnumerator rotatex()
     {
         transform.Rotate(0, 1.5f, 0, Space.Self);
-        yield return new WaitForSeconds(0.5f);
-        
+        yield return new WaitForSeconds(0.5f);        
         transform.Rotate(0, -1.5f, 0, Space.Self);
     }
 }

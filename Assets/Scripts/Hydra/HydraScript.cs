@@ -13,11 +13,18 @@ public class HydraScript : MonoBehaviour
     public Button back;
     private string url;
 
+    public Image backgroundImage;
+
     private GameObject window;
     List<GameObject> levelButtons;
+    float height;
+    float width;
+    int symbol;
+    public Text starCnt;
     // Start is called before the first frame update
     void Start()
     {
+        starCnt.text = "0";
         url = GlobalConstant.apiURL + "/playHistory";
         Button levelBut_1 = level_1.GetComponent<Button>();
         levelBut_1.onClick.AddListener(level1);
@@ -34,16 +41,24 @@ public class HydraScript : MonoBehaviour
         {
             levelButtons.Add(window.transform.GetChild(cnt).gameObject);
         }
-        Debug.Log(window);
+        height = 1440;
+        width = 2560;
+        backgroundImage.rectTransform.sizeDelta = new Vector2(width, height);
         
-
         StartCoroutine(ShowLevel());
+        symbol = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        height = (float)(height + 0.005 * 9 * symbol);
+        width = (float)(width + 0.005 * 16 * symbol);
+        if (width > 3840)
+            symbol = -1;
+        else if (width < 2560)
+            symbol = 1;
+        backgroundImage.rectTransform.sizeDelta = new Vector2(width, height);
     }
     void level1()
     {
@@ -85,8 +100,12 @@ public class HydraScript : MonoBehaviour
                     var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
                     result = "{\"events\":" + result + "}";
                     LevelEvent hydraHistory = JsonUtility.FromJson<LevelEvent>(result);
+                    int tempStarCnt = 0;
                     for(int cnt=0; cnt < hydraHistory.events.Length + 1; cnt++)
                     {
+                        if(cnt != hydraHistory.events.Length)
+                            tempStarCnt += hydraHistory.events[cnt].starCnt;
+                        starCnt.text = tempStarCnt.ToString();
                         levelButtons[hydraHistory.events.Length].gameObject.transform.GetChild(4).gameObject.SetActive(true);
                         levelButtons[cnt].gameObject.transform.GetChild(5).gameObject.SetActive(false);
                         levelButtons[cnt].gameObject.GetComponent<Button>().interactable = true;

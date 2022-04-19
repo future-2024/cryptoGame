@@ -30,6 +30,8 @@ public class LevelItem
     public string land;
     public string level;
     public int starCnt;
+    public float levelScore; 
+    public float maxScore; 
 }
 public class LevelEvent
 {
