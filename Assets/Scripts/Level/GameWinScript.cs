@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
+using System.Globalization;
 
 public class GameWinScript : MonoBehaviour
 {
@@ -141,8 +142,8 @@ public class GameWinScript : MonoBehaviour
                         scoreBarImg.value = winHistory.events[0].levelScore / winHistory.events[0].maxScore;
                     else 
                         scoreBarImg.value = 1;
-                    ScoreRecordText.text = winHistory.events[0].levelScore.ToString() + "/" + winHistory.events[0].maxScore.ToString();
-                    enemyNum.text = "Kills: " + scoreScript.score;
+                    ScoreRecordText.text = winHistory.events[0].levelScore.ToString("F2", CultureInfo.InvariantCulture) + "/" + winHistory.events[0].maxScore.ToString("F2", CultureInfo.InvariantCulture);
+                    enemyNum.text = "Kills: " + scoreScript.killNumber;
                     Debug.Log(winHistory);
                 }
                 else

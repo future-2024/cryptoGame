@@ -7,7 +7,7 @@ public class HpController : MonoBehaviour
 {
 
     public int hp;    
-    float maxHp1;
+    int maxHp1;
     public AudioClip ExplosionsSound;
     public GameObject Explosion;
     
@@ -39,7 +39,8 @@ public class HpController : MonoBehaviour
             AudioSource.PlayClipAtPoint(ExplosionsSound, transform.position);
             Instantiate(Explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            scoreScript.score++;            
+            scoreScript.score += maxHp1;
+            scoreScript.killNumber++;
         }
     }
 }

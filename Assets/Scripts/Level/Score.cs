@@ -18,8 +18,9 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI maxScoreText;
     public int maxScore;
     public int score;
+    public int killNumber;
     public int power;
-    public int i = 0;
+    public int flagWinParticle = 0;
     public bool winBool = false;
     public bool particle = false;
     public GameObject winGame;
@@ -45,7 +46,8 @@ public class Score : MonoBehaviour
         objectSpawners = GameObject.Find("AsteroidSpawner").GetComponent<ObjectSpawner>();
         timeManage = GameObject.Find("Border").GetComponent<TimeScript>();
         score = 0;
-        i = 0;
+        killNumber = 0;
+        flagWinParticle = 0;
         if (scoreText)
         {
             scoreText.text = "score: 0";
@@ -79,7 +81,7 @@ public class Score : MonoBehaviour
         {
             powerText.text = hpScript.hp.ToString() + "FT";
         }
-        if (score > maxScore)
+        if (killNumber > maxScore)
         {
             if (maxScoreText)
             {
@@ -90,12 +92,12 @@ public class Score : MonoBehaviour
     }
     void afterWin()
     {
-        if (i == 0 && winBool == true)
+        if (flagWinParticle == 0 && winBool == true)
         {
             objectSpawners.BGBossBar.SetActive(false);
             Instantiate(win, ship.transform.position, Quaternion.identity);
             StartCoroutine(winParticle());
-            i = 2;
+            flagWinParticle = 2;
         } else {
             boss = true;
         }

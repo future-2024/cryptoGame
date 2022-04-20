@@ -29,18 +29,18 @@ public class HpPlayer : MonoBehaviour
     }
 
     //will be called from the scripts on other gameobjects (like Bullet)
-    void MakeDamage(int damage)
-    {
+    //void MakeDamage(int damage)
+    //{
         //decrease hp value
-        hp2 = hp2 - damage;
+    //    hp2 = hp2 - damage;
         //check if hp is zero or negative
-        if (hp2 <= 0)
-        {
-            
+     //   if (hp2 <= 0)
+     //   {
+     //       
             //load current scene (reload)
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+    //    }
         //change fill amount between 0 and 1
-        img2.fillAmount = hp2 / maxHp2;
-    }
+    //    img2.fillAmount = hp2 / maxHp2;
+   // }
 }
