@@ -11,6 +11,7 @@ public class GameWinScript : MonoBehaviour
     public Button eixtBut;
     public Button restartBut;
     public GameObject gamewinObject;
+    public GameObject ScoreBar;
 
     private Score scoreScript;
     private TimeScript timeScript;
@@ -18,8 +19,10 @@ public class GameWinScript : MonoBehaviour
 
     public GameObject Brilliant;
 
+    public Text ScoreRecordText;
     public Text ScoreText;
     public Text TimeText;
+    public Text enemyNum;
 
     public string nextLevelText;
     public string nextLevel;
@@ -29,6 +32,7 @@ public class GameWinScript : MonoBehaviour
     private string url;
 
     List<GameObject> starArray;
+    Slider scoreBarImg;
     // int cnt;
 
     // Start is called before the first frame update
@@ -53,6 +57,7 @@ public class GameWinScript : MonoBehaviour
         StartCoroutine(getPlayHistory());
 
         window = GameObject.Find("gameWin/BG").gameObject;
+        scoreBarImg = ScoreBar.GetComponent<Slider>();
 
         for(int cnt = 1; cnt < 4; cnt++)
         {
@@ -132,6 +137,12 @@ public class GameWinScript : MonoBehaviour
                     {
                         starArray[cnt].GetComponent<Toggle>().isOn = true;
                     }
+                    if (winHistory.events[0].levelScore < winHistory.events[0].maxScore)
+                        scoreBarImg.value = winHistory.events[0].levelScore / winHistory.events[0].maxScore;
+                    else 
+                        scoreBarImg.value = 1;
+                    ScoreRecordText.text = winHistory.events[0].levelScore.ToString() + "/" + winHistory.events[0].maxScore.ToString();
+                    enemyNum.text = "Kills: " + scoreScript.score;
                     Debug.Log(winHistory);
                 }
                 else
