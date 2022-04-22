@@ -52,8 +52,8 @@ public class HydraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        height = (float)(height + 0.005 * 9 * symbol);
-        width = (float)(width + 0.005 * 16 * symbol);
+        height = (float)(height + 0.01 * 9 * symbol);
+        width = (float)(width + 0.01 * 16 * symbol);
         if (width > 3840)
             symbol = -1;
         else if (width < 2560)

@@ -25,6 +25,22 @@ public class BorderScript : MonoBehaviour
             Time.timeScale = 0;
             Modal.SetActive(true);
         }
+        else if (Input.GetAxis("Horizontal") > 0)
+        {
+            Debug.Log("left");
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            Debug.Log("right");
+        }
+        else if (Input.GetAxis("Vertical") > 0)
+        {
+            Debug.Log("top");
+        }
+        else if (Input.GetAxis("Vertical") < 0)
+        {
+            Debug.Log("down");
+        }
     }    
     void ExitApp()
     {

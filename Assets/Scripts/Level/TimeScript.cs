@@ -23,7 +23,7 @@ public class TimeScript : MonoBehaviour
         //set timer UI
         secondsCount += Time.deltaTime;
         miliSecond += Time.deltaTime;
-        timerText.text = "Delay Time:" + hourCount + "h:" + minuteCount + "m:" + (int)secondsCount + "s:" + (int)miliSecond;
+        timerText.text = "Delay Time:" + hourCount + ":" + minuteCount + ":" + (int)secondsCount;
         if (secondsCount >= 60)
         {
             minuteCount++;

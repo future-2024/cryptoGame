@@ -8,8 +8,7 @@ public class Keydown : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
-        Debug.Log(KeyCode.A);       
+    { 
     }
 
     void Update()
