@@ -13,6 +13,7 @@ public class MainAudio : MonoBehaviour
     void Start()
     {        
         mainMusic = GetComponent<AudioSource>();
+        //ToggleSound();
     }
 
     // Update is called once per frame
@@ -30,5 +31,9 @@ public class MainAudio : MonoBehaviour
                 mainMusic.Stop();
             }
         }       
+    }
+    public void ToggleSound()
+    {
+            AudioListener.volume = 1f;
     }
 }
