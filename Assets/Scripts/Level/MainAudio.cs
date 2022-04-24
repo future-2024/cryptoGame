@@ -13,7 +13,7 @@ public class MainAudio : MonoBehaviour
     void Start()
     {        
         mainMusic = GetComponent<AudioSource>();
-        //ToggleSound();
+        ToggleSound();
     }
 
     // Update is called once per frame
@@ -34,6 +34,6 @@ public class MainAudio : MonoBehaviour
     }
     public void ToggleSound()
     {
-            AudioListener.volume = 1f;
+            AudioListener.volume = 0.9f;
     }
 }
