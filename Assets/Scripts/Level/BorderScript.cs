@@ -9,6 +9,9 @@ public class BorderScript : MonoBehaviour
     public GameObject Modal;
     public Text countText;
     int i = 3;
+    bool flag = false;
+    private object rectransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,20 +30,41 @@ public class BorderScript : MonoBehaviour
         }
         else if (Input.GetAxis("Horizontal") > 0)
         {
-            Debug.Log("left");
+            GameObject.Find("Direction/Up").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Right").gameObject.GetComponent<Toggle>().isOn = true;
+            GameObject.Find("Direction/Down").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Left").gameObject.GetComponent<Toggle>().isOn = false;
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
-            Debug.Log("right");
+            GameObject.Find("Direction/Up").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Right").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Down").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Left").gameObject.GetComponent<Toggle>().isOn = true;
         }
         else if (Input.GetAxis("Vertical") > 0)
         {
-            Debug.Log("top");
+            GameObject.Find("Direction/Up").gameObject.GetComponent<Toggle>().isOn = true;
+            GameObject.Find("Direction/Right").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Down").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Left").gameObject.GetComponent<Toggle>().isOn = false;
         }
         else if (Input.GetAxis("Vertical") < 0)
         {
-            Debug.Log("down");
+            GameObject.Find("Direction/Up").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Right").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Down").gameObject.GetComponent<Toggle>().isOn = true;
+            GameObject.Find("Direction/Left").gameObject.GetComponent<Toggle>().isOn = false;
         }
+        else 
+        {
+            GameObject.Find("Direction/Up").gameObject.GetComponent<Toggle>().isOn=false;
+            GameObject.Find("Direction/Right").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Down").gameObject.GetComponent<Toggle>().isOn = false;
+            GameObject.Find("Direction/Left").gameObject.GetComponent<Toggle>().isOn = false;
+        }
+
+        //MiniMap();
     }    
     void ExitApp()
     {
@@ -53,6 +77,23 @@ public class BorderScript : MonoBehaviour
         {
             countText.text = i.ToString();
             i--;
+        }
+        else
+        {
+            flag = true;
+        }
+    }
+    void MiniMap()
+    {
+
+        if (flag == true)
+        {
+            //Debug.Log(GameObject.Find("SpaceShip").gameObject.transform.position);
+//            GameObject.Find("MINIMAP1/Icon_Target").gameObject.GetComponent<RectTransform>().anchoredPosition = Camera.main.ViewportToWorldPoint(GameObject.Find("SpaceShip").transform.position);
+            //for (int enemy = 0; enemy < GameObject.FindGameObjectsWithTag("Enemy").Length; enemy++)
+          //  {
+                
+          //  }
         }
     }
 }

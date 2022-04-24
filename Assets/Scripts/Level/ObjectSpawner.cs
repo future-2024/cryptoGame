@@ -26,9 +26,14 @@ public class ObjectSpawner : MonoBehaviour
     public bool on = false;
     HpController bossHpController;
     public GameObject BossObject;
-
+    GameObject miniMap;
+    GameObject enemyMap;
+    int verify;
     void Start()
     {
+        verify = 0;
+        miniMap = (GameObject)Resources.Load("Icon_TargetYellow");
+        
         score = GameObject.Find("ScoreManger").GetComponent<Score>();
         //"Spawn" function will be called repeatedly
         InvokeRepeating("Spawn", 5, spawnDelay);
@@ -51,13 +56,33 @@ public class ObjectSpawner : MonoBehaviour
             int i = Random.Range(0, enemyName.Count);
             //Debug.Log(enemyName[i]);
             Instantiate(Resources.Load(enemyName[i]), spawnPos, transform.rotation);
+            
+/*            enemyMap = (GameObject)Instantiate(miniMap, spawnPos, transform.rotation);
+            enemyMap.transform.SetParent(GameObject.Find("BG/MINIMAP1").transform, false);
+            verify++;
+*/
         }
         if (score.boss == true && on == false) {
             BGBossBar.SetActive(true);
+            
             Vector3 spawnPos = new Vector3(Random.Range(LeftPosition.position.x, RightPosition.position.x), transform.position.y, 0);
             Instantiate(Resources.Load(bossName[0]), spawnPos, transform.rotation);
             on = true;
+  
         }
+    }
+    void Update()
+    {
+        /*byby
+        if (enemyMap)
+        {
+            enemyMap.name = enemyMap.name + verify;
+            Debug.Log(enemyMap.name);
+
+            //Debug.Log("in");
+            GameObject.Find("MINIMAP1/Icon_TargetYellow(Clone)" + verify).gameObject.GetComponent<RectTransform>().anchoredPosition = Camera.main.ViewportToWorldPoint(GameObject.FindGameObjectWithTag("Enemy").transform.position);
+            Debug.Log(verify);
+        }*/
     }
     public IEnumerator Enemy(EnemyData enemy)
     {
