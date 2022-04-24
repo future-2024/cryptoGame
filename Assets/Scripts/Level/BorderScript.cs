@@ -19,7 +19,6 @@ public class BorderScript : MonoBehaviour
         Button btnExit = Exit.GetComponent<Button>();
         btnExit.onClick.AddListener(ExitApp);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -63,7 +62,6 @@ public class BorderScript : MonoBehaviour
             GameObject.Find("Direction/Down").gameObject.GetComponent<Toggle>().isOn = false;
             GameObject.Find("Direction/Left").gameObject.GetComponent<Toggle>().isOn = false;
         }
-
         //MiniMap();
     }    
     void ExitApp()
@@ -88,12 +86,11 @@ public class BorderScript : MonoBehaviour
 
         if (flag == true)
         {
-            //Debug.Log(GameObject.Find("SpaceShip").gameObject.transform.position);
-//            GameObject.Find("MINIMAP1/Icon_Target").gameObject.GetComponent<RectTransform>().anchoredPosition = Camera.main.ViewportToWorldPoint(GameObject.Find("SpaceShip").transform.position);
-            //for (int enemy = 0; enemy < GameObject.FindGameObjectsWithTag("Enemy").Length; enemy++)
-          //  {
-                
-          //  }
+            // Debug.Log(GameObject.Find("SpaceShip").gameObject.transform.position);
+            // GameObject.Find("MINIMAP1/Icon_Target").gameObject.GetComponent<RectTransform>().anchoredPosition = Camera.main.ViewportToWorldPoint(GameObject.Find("SpaceShip").transform.position);
+            // for (int enemy = 0; enemy < GameObject.FindGameObjectsWithTag("Enemy").Length; enemy++)
+            // {                
+            // }
         }
     }
 }

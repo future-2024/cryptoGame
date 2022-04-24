@@ -8627,7 +8627,7 @@ Transform:
   m_GameObject: {fileID: 1017109553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 3.2, z: 0}
-  m_LocalScale: {x: 1.48, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.65, y: 1.65, z: 1}
   m_Children:
   - {fileID: 1778625066}
   m_Father: {fileID: 0}
@@ -28781,6 +28781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5614602374333846047}
   - component: {fileID: 5614602374333846046}
+  - component: {fileID: 5614602374333846045}
   m_Layer: 0
   m_Name: MiniMap
   m_TagString: MainCamera
@@ -28788,6 +28789,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5614602374333846045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614602374333846044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de66ba696b295204bb3856b7d8c9a94a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &5614602374333846046
 Camera:
   m_ObjectHideFlags: 0
@@ -28797,8 +28810,8 @@ Camera:
   m_GameObject: {fileID: 5614602374333846044}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 0.047058824}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.18583123, g: 0.2761564, b: 0.4245283, a: 0.88235295}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -28807,10 +28820,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.01
-    y: 0.74
-    width: 0.2
-    height: 0.2
+    x: 0.028
+    y: 0.69
+    width: 0.24
+    height: 0.24
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -28819,7 +28832,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 130
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -29237,6 +29250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 7225021424809825040, guid: 233a250380216214a96c80089bdf727e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7225021424809825042, guid: 233a250380216214a96c80089bdf727e, type: 3}
       propertyPath: orthographic size
       value: 9
@@ -29251,7 +29268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7225021424809825043, guid: 233a250380216214a96c80089bdf727e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 7225021424809825043, guid: 233a250380216214a96c80089bdf727e, type: 3}
       propertyPath: m_LocalPosition.y
