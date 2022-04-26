@@ -50,7 +50,7 @@ public class Score : MonoBehaviour
         flagWinParticle = 0;
         if (scoreText)
         {
-            scoreText.text = "score: 0";
+            scoreText.text = "Score: 0";
         }
         if (powerText)
         {
@@ -75,7 +75,7 @@ public class Score : MonoBehaviour
     {
         if (scoreText)
         {
-            scoreText.text = "score: " + score.ToString();
+            scoreText.text = "Score: " + score.ToString();
         }
         if (powerText)
         {

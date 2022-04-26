@@ -32,7 +32,7 @@ public class PlayerHP : MonoBehaviour
     public int maxHp;
     float tm;
     bool hhh = true;
-    float itemTime = (float)GlobalConstant.itemDelay;
+    float itemTime;
     float preTime;
     public bool gameOver = false;
     public bool shieldDetected = false;
@@ -51,6 +51,7 @@ public class PlayerHP : MonoBehaviour
     
     void Start()
     {
+        itemTime = (float)GlobalConstant.itemDelay;
         itemCnt = 0;
         gameObject.SetActive(false);
         sprite = gameObject.GetComponent<SpriteRenderer>();
@@ -171,8 +172,8 @@ public class PlayerHP : MonoBehaviour
         }
         if (tm != 0)
         {
-            tm = tm - (Time.realtimeSinceStartup - preTime)/500;
-            
+            //Debug.Log(Time.realtimeSinceStartup);
+            tm = tm - (Time.realtimeSinceStartup - preTime)/500;            
             img3.fillAmount = tm / itemTime;
         }
         if (hp > 0 && hp < 3)
