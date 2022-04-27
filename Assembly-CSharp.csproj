@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyData.cs" />
     <Compile Include="Assets\Scripts\Item\ItemData.cs" />
     <Compile Include="Assets\Scripts\Global\GlobalConstant.cs" />
+    <Compile Include="Assets\Scripts\Temp.cs" />
     <Compile Include="Assets\GUIPack\Demo\Scripts\Popup.cs" />
     <Compile Include="Assets\Scripts\Level\PlayerHP.cs" />
     <Compile Include="Assets\SCIPack\Common\Scripts\SimpleProgress1.cs" />
@@ -116,7 +117,7 @@
     <Compile Include="Assets\Scripts\SelectMission.cs" />
     <Compile Include="Assets\Scripts\Level\BorderScript.cs" />
     <Compile Include="Assets\Scripts\Level\Score.cs" />
-    <Compile Include="Assets\Scripts\Temp.cs" />
+    <Compile Include="Assets\Scripts\Level\SceneScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -19,7 +19,8 @@ public class PlayerShot : MonoBehaviour {
     bool canShoot = true;
     public string bulletMode = "default";
     private string type = "player";
-
+    public Button defaultButton;
+    public Button itemButton;
     //will be executed every frame
     void Start ()
     {
@@ -56,6 +57,17 @@ public class PlayerShot : MonoBehaviour {
             }
             StartCoroutine(NoFire());
         }
+        if(bulletMode == "default")
+        {
+            defaultButton.Select();
+            itemButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            itemButton.gameObject.SetActive(true);
+            itemButton.Select();
+            itemButton.gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("bulletParallel"); ;
+        }
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -82,7 +94,6 @@ public class PlayerShot : MonoBehaviour {
             bulletMode = other.gameObject.tag;
             Destroy(other.gameObject);
             StartCoroutine(FireAct());
-
         }
     }
 
