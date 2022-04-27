@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 763177948019063097}
   m_Layer: 0
   m_Name: bulletSpeed
-  m_TagString: speed
+  m_TagString: speedImg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSpeed: 1
+  once: 1
+  hpScript: {fileID: 0}
 --- !u!50 &8755378633029039225
 Rigidbody2D:
   serializedVersion: 4

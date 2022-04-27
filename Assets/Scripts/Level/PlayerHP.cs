@@ -47,6 +47,9 @@ public class PlayerHP : MonoBehaviour
     private SpriteRenderer sprite;
     public GameObject hpbar;
 
+    public Text ItemDelay;
+    public Text Remain;
+
     public int itemCnt;
     
     void Start()
@@ -61,6 +64,8 @@ public class PlayerHP : MonoBehaviour
         img3 = ItemBar.GetComponent<Image>();
         tm = 0;
         img3.fillAmount = tm / itemTime;
+
+        
 
         //set maximum HP as current HP
         //hp = maxHp;
@@ -109,7 +114,7 @@ public class PlayerHP : MonoBehaviour
             Destroy(other.gameObject);
             itemCnt++;
         }
-        if (other.gameObject.tag == "speed")
+        if (other.gameObject.tag == "speedImg")
         {
             preTime = Time.realtimeSinceStartup;
             tm = itemTime;
@@ -175,6 +180,15 @@ public class PlayerHP : MonoBehaviour
             //Debug.Log(Time.realtimeSinceStartup);
             tm = tm - (Time.realtimeSinceStartup - preTime)/500;            
             img3.fillAmount = tm / itemTime;
+            ItemDelay.text = "/"+itemTime.ToString();
+            if(tm < 0)
+            {
+                Remain.text = "0.";
+            }
+            else
+            {
+                Remain.text = tm.ToString();
+            }
         }
         if (hp > 0 && hp < 3)
         {

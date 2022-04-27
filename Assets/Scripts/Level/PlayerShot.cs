@@ -66,8 +66,10 @@ public class PlayerShot : MonoBehaviour {
         {
             itemButton.gameObject.SetActive(true);
             itemButton.Select();
-            itemButton.gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("bulletParallel"); ;
-        }
+            Debug.Log(bulletMode);
+            Sprite tempSprite = Resources.Load<Sprite>(bulletMode);
+            itemButton.gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = tempSprite;
+       }
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -100,6 +102,7 @@ public class PlayerShot : MonoBehaviour {
     //coroutine function, we can pause it
     IEnumerator NoFire () {
         yield return new WaitForSeconds (delayTime);
+        Debug.Log(delayTime);
         canShoot = true;
     }
     IEnumerator FireAct () { 
