@@ -1,6 +1,7 @@
 class GlobalConstant
 {
     public const int itemDelay = 10;
+    public const float bulletDelay = 0.1f;
     public const string apiURL = "http://localhost:3001";
 
     public const string LoadingScene = "Loading";

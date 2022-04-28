@@ -21,10 +21,12 @@ public class PlayerShot : MonoBehaviour {
     private string type = "player";
     public Button defaultButton;
     public Button itemButton;
+    CircleSlider cSlider;
     //will be executed every frame
     void Start ()
     {
-
+        cSlider = GameObject.Find("Progress0").GetComponent<CircleSlider>();
+        delayTime = GlobalConstant.bulletDelay;
     }
 
     void OnEnable()
@@ -35,7 +37,7 @@ public class PlayerShot : MonoBehaviour {
 
         //check if laser can be spawned and right mouse button is pressed
         if (canShoot && Input.GetMouseButton(1)) {
-
+            cSlider.time = 0f;
             //disable shooting check for next frame
             canShoot = false;
             
