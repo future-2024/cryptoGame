@@ -10096,15 +10096,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e6918eacb07c2419dc3cacfbd37671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameoverObject: {fileID: 8711020053985457449, guid: 2a2cb0f5c1869b14195e3e083c04a044, type: 3}
+  gameoverObject: {fileID: 0}
   HealthBar: {fileID: 5208553374738925978}
   HealthBarNav: {fileID: 6003125643506467013, guid: ed92138aef6b65142b50c077c66f827a, type: 3}
   ItemBar: {fileID: 5208553375781145045}
   ExplosionsSound: {fileID: 8300000, guid: 844d0b970333f114883f00fa357202b0, type: 3}
   VibrationSound: {fileID: 8300000, guid: 0e6b97add6e5c4641b408aabe8277252, type: 3}
   Explosion: {fileID: 749456174181237693, guid: 4fafd8b644b6b654aa1d4b198df8616b, type: 3}
-  hp: 20
-  maxHp: 20
+  hp: 0
+  maxHp: 0
   gameOver: 0
   shieldDetected: 0
   over: {fileID: 3135572651036500767, guid: 54ee47471063cb94aa7ad42545afe1d9, type: 3}

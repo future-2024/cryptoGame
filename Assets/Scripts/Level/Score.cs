@@ -24,8 +24,8 @@ public class Score : MonoBehaviour
     public bool winBool = false;
     public bool particle = false;
     public GameObject winGame;
+    public GameObject overGame;
     public GameObject win;
-    public GameObject ship;
     private PlayerHP hpScript;
     private ItemManager itemScript;
     public Text startText;
@@ -100,7 +100,6 @@ public class Score : MonoBehaviour
         if (flagWinParticle == 0 && winBool == true)
         {
             objectSpawners.BGBossBar.SetActive(false);
-            Instantiate(win, ship.transform.position, Quaternion.identity);
             StartCoroutine(winParticle());
             flagWinParticle = 2;
         } else {
@@ -133,7 +132,6 @@ public class Score : MonoBehaviour
                     maxHp = (int)tempArray["maxHp"];
                     maxScore = (int)tempArray["maxScore"];
                     player = (string)tempArray["player"];
-                    Debug.Log("player---" + player);
                 }
                 else
                 {
@@ -158,10 +156,8 @@ public class Score : MonoBehaviour
             powerText.text = hpScript.hp.ToString() + "FT";
         }
         hpScript.maxHp = 20;
-    }
-    
-
-        IEnumerator winParticle()
+    }  
+    IEnumerator winParticle()
     {
         //winBool = true;
         winText.text = "Mission Completed!";
@@ -170,6 +166,10 @@ public class Score : MonoBehaviour
         winText.text = " ";
         StartCoroutine(SaveData());
         winGame.SetActive(true);
+    }
+    public void gameOver()
+    {
+        overGame.SetActive(true);
     }
     public IEnumerator SaveData()
     {

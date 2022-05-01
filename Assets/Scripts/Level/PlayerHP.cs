@@ -63,9 +63,7 @@ public class PlayerHP : MonoBehaviour
         img = HealthBar.GetComponent<Image>();
         img3 = ItemBar.GetComponent<Image>();
         tm = 0;
-        img3.fillAmount = tm / itemTime;
-
-        
+        img3.fillAmount = tm / itemTime;        
 
         //set maximum HP as current HP
         //hp = maxHp;
@@ -79,6 +77,8 @@ public class PlayerHP : MonoBehaviour
         scoreScript = GameObject.Find("ScoreManger").GetComponent<Score>();
         
         scoreScript.power = hp + 1;
+
+        gameoverObject = GameObject.Find("gameOver");
     }
 
     //will be called from the scripts on other gameobjects (like Bullet)
@@ -249,8 +249,7 @@ public class PlayerHP : MonoBehaviour
     {
         yield return new WaitForSeconds(3);            
         gameOver = true;
-        gameoverObject.SetActive(true);
-        Debug.Log("sdlkfjowijdflksdjofiwjfs");
+        scoreScript.gameOver();
         Time.timeScale = 0;
     }
 }
