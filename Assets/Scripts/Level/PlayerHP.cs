@@ -56,7 +56,7 @@ public class PlayerHP : MonoBehaviour
     {
         itemTime = (float)GlobalConstant.itemDelay;
         itemCnt = 0;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         sprite = gameObject.GetComponent<SpriteRenderer>();
         i = 0;
         //reference to Image component in PlayerHP
@@ -250,6 +250,7 @@ public class PlayerHP : MonoBehaviour
         yield return new WaitForSeconds(3);            
         gameOver = true;
         gameoverObject.SetActive(true);
+        Debug.Log("sdlkfjowijdflksdjofiwjfs");
         Time.timeScale = 0;
     }
 }

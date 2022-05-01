@@ -8467,6 +8467,7 @@ MonoBehaviour:
   countText: {fileID: 101194965}
   winText: {fileID: 1134962840}
   boss: 0
+  spawner: {fileID: 1873366675}
 --- !u!4 &829438842
 Transform:
   m_ObjectHideFlags: 0
@@ -9437,12 +9438,12 @@ GameObject:
   - component: {fileID: 1043371317}
   - component: {fileID: 1043371313}
   m_Layer: 0
-  m_Name: SpaceShip
+  m_Name: SpaceShipssss
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1043371310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17390,6 +17391,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4305063102041661552, guid: 38a77d5ece526f543944b1ba55ea2ec1, type: 3}
   m_PrefabInstance: {fileID: 6800610170686382320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1873366675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1873366676}
+  m_Layer: 0
+  m_Name: SpaceSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1873366676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873366675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1894767740
 GameObject:
   m_ObjectHideFlags: 0

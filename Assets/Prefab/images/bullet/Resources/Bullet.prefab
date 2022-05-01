@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041b9444206848e41ad44af4195c7570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0.3
+  force: 10
   damage: 1
   BulletSound: {fileID: 8300000, guid: 059192fbd831ed049b0910085a1ba107, type: 3}
 --- !u!1 &5959863911338305102

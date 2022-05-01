@@ -37,12 +37,16 @@ public class Score : MonoBehaviour
     ObjectSpawner objectSpawners;
     private TimeScript timeManage;
 
+    private string player;
+    public GameObject spawner;
+    private int maxHp;
+
     void Start()
     {
         url = GlobalConstant.apiURL + "/level";
         saveHistoryUrl = GlobalConstant.apiURL + "/playHistory";
         itemScript = GameObject.Find("itemmanager").GetComponent<ItemManager>();
-        hpScript = GameObject.Find("SpaceShip").GetComponent<PlayerHP>();
+       
         objectSpawners = GameObject.Find("AsteroidSpawner").GetComponent<ObjectSpawner>();
         timeManage = GameObject.Find("Border").GetComponent<TimeScript>();
         score = 0;
@@ -52,22 +56,20 @@ public class Score : MonoBehaviour
         {
             scoreText.text = "Score: 0";
         }
-        if (powerText)
-        {
-            powerText.text = hpScript.hp.ToString() + "FT";
-        }
+        
         
         items = new itemdata()
         {
             land = PlayerPrefs.GetString("land"),
             level = PlayerPrefs.GetString("level"),
         };
-
+        Debug.Log(items.land);
+        StartCoroutine(Server(items));
         StartCoroutine(loading());
 
         maxScore = 20;
-        hpScript.maxHp = 20;
-        StartCoroutine(Server(items));
+        
+        
     }
 
     // Update is called once per frame
@@ -79,7 +81,10 @@ public class Score : MonoBehaviour
         }
         if (powerText)
         {
-            powerText.text = hpScript.hp.ToString() + "FT";
+            if (hpScript)
+            {
+                powerText.text = hpScript.hp.ToString() + "FT";
+            }
         }
         if (killNumber > maxScore)
         {
@@ -123,10 +128,12 @@ public class Score : MonoBehaviour
             {
                 if (www.isDone)
                 {
-                    var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+                    //var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
                     var tempArray = JObject.Parse(www.downloadHandler.text);
-                    hpScript.maxHp = (int)tempArray["maxHp"];
+                    maxHp = (int)tempArray["maxHp"];
                     maxScore = (int)tempArray["maxScore"];
+                    player = (string)tempArray["player"];
+                    Debug.Log("player---" + player);
                 }
                 else
                 {
@@ -141,10 +148,20 @@ public class Score : MonoBehaviour
         yield return new WaitForSeconds(4);
         Destroy(startText);
         Destroy(countText);
-        ship.SetActive(true);
-
+        Instantiate(Resources.Load(player), spawner.transform.position, transform.rotation);
+        //StartCoroutine(LoadingRequest());
+        //ship.SetActive(true);
+        hpScript = GameObject.Find("SpaceShip(Clone)").GetComponent<PlayerHP>();
+        hpScript.maxHp = maxHp;
+        if (powerText)
+        {
+            powerText.text = hpScript.hp.ToString() + "FT";
+        }
+        hpScript.maxHp = 20;
     }
-    IEnumerator winParticle()
+    
+
+        IEnumerator winParticle()
     {
         //winBool = true;
         winText.text = "Mission Completed!";
@@ -193,4 +210,5 @@ public class Score : MonoBehaviour
             }
         }
     }
+    
 }

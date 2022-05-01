@@ -42,7 +42,7 @@ public class GameWinScript : MonoBehaviour
         starArray = new List<GameObject>();
         scoreScript = GameObject.Find("ScoreManger").GetComponent<Score>();
         timeScript = GameObject.Find("Border").GetComponent<TimeScript>();
-        hpScript = GameObject.Find("SpaceShip").GetComponent<PlayerHP>();
+        hpScript = GameObject.Find("SpaceShip(Clone)").GetComponent<PlayerHP>();
 
         Button restartButC = restartBut.GetComponent<Button>();
         restartButC.onClick.AddListener(restartApp);

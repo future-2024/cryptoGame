@@ -100,6 +100,7 @@ MonoBehaviour:
   itemSpeed: 1
   once: 1
   hpScript: {fileID: 0}
+  SpaceShip: {fileID: 5208553375533554006, guid: 7398b99088fa4e341b497a7ed43373bb, type: 3}
 --- !u!50 &8755378633029039225
 Rigidbody2D:
   serializedVersion: 4

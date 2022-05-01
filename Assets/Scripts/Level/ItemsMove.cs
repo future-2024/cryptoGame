@@ -12,16 +12,25 @@ public class ItemsMove : MonoBehaviour
     public PlayerHP hpScript;
     //reference for Rigidbody2D
     Rigidbody2D rigidBody;
+    public GameObject SpaceShip;
 
     //will be executed once at PlayerHP start
     void Start()
     {
         //reference to Rigidbody2D
         rigidBody = GetComponent<Rigidbody2D>();
+        StartCoroutine(loading());
 
-        hpScript = GameObject.Find("SpaceShip").GetComponent<PlayerHP>();
         InvokeRepeating("ItemMove", 0, 10);
         //declare direction vector for moving (this will be along the Y-axe)
+    }
+    IEnumerator loading()
+    {
+        yield return new WaitForSeconds(4);
+        //Debug.Log(GameObject.Find("SpaceShip"));
+        hpScript = SpaceShip.GetComponent<PlayerHP>();
+        
+
     }
     //will be executed if gameobject is not rendered anymore on screen
     void OnBecameInvisible()
@@ -42,10 +51,13 @@ public class ItemsMove : MonoBehaviour
     }
     private void ItemMove()
     {
-        if (hpScript.gameOver == false)
+        if (hpScript)
         {
-            Vector3 ItemMove = new Vector3(Random.Range(-1, 1), Random.Range(0, -5), 0);
-            rigidBody.velocity = ItemMove * itemSpeed;
+            if (hpScript.gameOver == false)
+            {
+                Vector3 ItemMove = new Vector3(Random.Range(-1, 1), Random.Range(0, -5), 0);
+                rigidBody.velocity = ItemMove * itemSpeed;
+            }
         }
     }
 }

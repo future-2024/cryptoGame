@@ -94,10 +94,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 461118066377319520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a0f2979197f0d44db14909f075b4be3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b4bfb782edfec04fae9205c87769de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSpeed: 1
+  itemSpeed: 0
+  once: 1
+  hpScript: {fileID: 0}
+  SpaceShip: {fileID: 5208553375533554006, guid: 7398b99088fa4e341b497a7ed43373bb, type: 3}
 --- !u!50 &1968911988103752773
 Rigidbody2D:
   serializedVersion: 4

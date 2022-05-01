@@ -20,7 +20,7 @@ public class LaserShot : MonoBehaviour
     {
         //reference to Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
-        playerScript = GameObject.Find("SpaceShip").GetComponent<PlayerShot>();
+        playerScript = GameObject.Find("SpaceShip(Clone)").GetComponent<PlayerShot>();
         //declare Vector3 with force value on Y-axe
         if (playerScript.bulletMode == "speed")
         {

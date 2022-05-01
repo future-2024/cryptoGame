@@ -21,7 +21,7 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         score = GameObject.Find("ScoreManger").GetComponent<Score>();
-        hpScript = GameObject.Find("SpaceShip").GetComponent<PlayerHP>();
+        hpScript = GameObject.Find("SpaceShip(Clone)").GetComponent<PlayerHP>();
         //reference to Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
         //search for gameobject with tag Player and reference to them
@@ -36,7 +36,7 @@ public class EnemyBullet : MonoBehaviour
             //rotate the bullets gameobject
             transform.Rotate(0, 0, angle);
             //push bullet on its locale X-axe (it will be forward for this image)
-            rb.velocity = new Vector2(dir.x, dir.y) * force;
+            rb.velocity = new Vector2(dir.x, dir.y).normalized * force;
             //play sound (gameobject will be created at the position, which will play the sound and then destroy itself)
             AudioSource.PlayClipAtPoint(BulletSound, transform.position);
             //if Player isn't in the scene

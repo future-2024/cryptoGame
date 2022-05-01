@@ -12,7 +12,7 @@ public class Boss_Move : MonoBehaviour
     {
         score = GameObject.Find("ScoreManger").GetComponent<Score>();
         rb = GetComponent < Rigidbody2D > ();
-        script = GameObject.Find("SpaceShip").GetComponent<PlayerHP>();
+        script = GameObject.Find("SpaceShip(Clone)").GetComponent<PlayerHP>();
         InvokeRepeating("Move", 0, 2);
     }
 

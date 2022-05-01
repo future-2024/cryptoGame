@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour {
 
     //will be executed once at scripts start
     void Start() {
-        script = GameObject.Find("SpaceShip").GetComponent<PlayerHP>();
+        script = GameObject.Find("SpaceShip(Clone)").GetComponent<PlayerHP>();
         rb = GetComponent<Rigidbody2D>();
         m_ObjectCollider = GetComponent<Collider2D>();
     }

@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSpeed: 1
+  once: 1
+  hpScript: {fileID: 0}
+  SpaceShip: {fileID: 5208553375533554006, guid: 7398b99088fa4e341b497a7ed43373bb, type: 3}
 --- !u!61 &-4033755082990129602
 BoxCollider2D:
   m_ObjectHideFlags: 0
